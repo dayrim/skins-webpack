@@ -1,0 +1,65 @@
+.google-map {
+	position: relative;
+
+	@include loading-icon();
+
+	&.loaded:before {
+		content:none;
+	}
+}
+
+.hotel-location-map, .poi-map-canvas {
+	height: 444px;
+	background: #e5e3df;
+
+	h4 {
+		margin: 0;
+		font: 16px $secondary-font;
+		text-transform: uppercase;
+		color: #327d7d;
+	}
+
+	p {
+		margin: 5px 0 0;
+		font-size: 14px;
+		line-height: 1.2;
+		white-space: nowrap;
+	}
+
+	.button {
+		display: block;
+	}
+
+	.map-content {
+		overflow: hidden;
+	}
+}
+
+.map-content {
+	background: rgba(46, 102, 102, 0.9);
+	font-size: 14px;
+	line-height: 24px;
+	overflow: hidden;
+	padding: 20px;
+	position: relative;
+	text-align: center;
+	color: #fff;
+	width: 300px;
+
+	h3, p {
+		margin-bottom: 5px;
+	}
+
+	h3 {
+		font: 700 16px/24px $secondary-font;
+		color: #fff;
+	}
+
+	a {
+		color: #fff;
+	}
+
+	.button {
+		margin-top: 20px;
+	}
+}

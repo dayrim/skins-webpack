@@ -1,0 +1,96 @@
+// Usage:
+// .element {
+//     @include mixin-name;
+//     OR
+//     @include mixin-name(arguments);
+// }
+
+@mixin font-face($font-name, $font-path, $font-weight: normal, $font-style: normal) { 
+	@font-face {
+		font-family: '#{$font-name}';
+		src:url('#{$font-path}.woff2') format('woff2'),
+			url('#{$font-path}.woff') format('woff');
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}
+
+@mixin clear-after {
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+@mixin overflow-ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin loading-icon() {
+	&:before {
+		content: " ";
+		position:absolute;
+		top: 50%;
+		left: 50%;
+		width: 24px;
+		height: 24px;
+		margin: -12px 0 0 -12px;
+		border: 3px solid transparent;
+		border-top-color:#54baba;
+		border-bottom-color:#54baba;
+		border-radius: 50%;
+
+		animation: loading-icon-spin 1200ms linear infinite;
+	}
+
+	@keyframes loading-icon-spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+	$responsive-unitless: $responsive / ($responsive - $responsive + 1);
+	$dimension: if(unit($responsive) == 'vh', 'height', 'width');
+	$min-breakpoint: $min / $responsive-unitless * 100;
+
+	@media (max-#{$dimension}: #{$min-breakpoint}) {
+		font-size: $min;
+	}
+
+	@if $max {
+		$max-breakpoint: $max / $responsive-unitless * 100;
+
+		@media (min-#{$dimension}: #{$max-breakpoint}) {
+			font-size: $max;
+		}
+	}
+
+	@if $fallback {
+		font-size: $fallback;
+	}
+
+	font-size: $responsive;
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder           { @content; }
+	&::-moz-placeholder          { @content; }
+	&:-ms-input-placeholder      { @content; }
+}

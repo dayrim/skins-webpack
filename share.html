@@ -1,0 +1,30 @@
+<script type="text/javascript">
+	$(function(){
+		$('#share-this-site a').each(function(){
+			var url = $(this).attr('href') + '?' + $(this).attr('rev')	.replace(/{URL}/g, encodeURIComponent(self.location.href))
+																		.replace(/{TITLE}/g, encodeURIComponent($('title:first').text()))
+																		.replace(/{H1}/g, encodeURIComponent($('h1:first').text()))
+																		.replace(/{TXT}/g, encodeURIComponent($('meta[name="description"]').attr('content')))
+																		.replace(/{TAG}/g, encodeURIComponent($('meta[name="keywords"]').attr('content')));
+			$(this).attr({'href': url, 'target': '_blank'});
+		});
+	});
+</script>
+
+<ul id="share-this-site">
+	<li><a href="http://www.facebook.com/sharer.php?s=100" rev="&amp;p[url]={URL}&amp;p[title]={TITLE}&amp;p[summary]={TXT}" class="share_facebook"><span class="icon"></span>Facebook</a></li>
+	<li><a href="http://twitter.com/home" rev="status={H1} {URL}" class="share_twitter"><span class="icon"></span>Twitter</a></li>
+	<li><a href="http://www.pinterest.com/pin/create/button/" rev="url={URL}&amp;description={TXT}" class="share_pinterest"><span class="icon"></span>Pinterest</a></li>
+	<li><a href="http://www.linkedin.com/shareArticle" rev="mini=true&amp;url={URL}&amp;title={TITLE}" class="share_linkedin"><span class="icon"></span>Linkedin</a></li>
+	<li><a href="http://digg.com/submit" rev="phase=2&amp;url={URL}&amp;title={TITLE}" class="share_digg"><span class="icon"></span>Digg</a></li>
+	<li><a href="http://del.icio.us/post" rev="v=4&amp;partner=[partner]&amp;noui&amp;url={URL}&amp;title={TITLE}" class="share_delicious"><span class="icon"></span>Delicious</a></li>
+	<li><a href="http://stumbleupon.com/submit" rev="url={URL}&amp;title={TITLE}" class="share_stumbleupon"><span class="icon"></span>Stumble Upon</a></li>
+	<li><a href="http://promote.orkut.com/preview" rev="nt=orkut.com&amp;tt={TITLE}&amp;du={URL}" class="share_orkut"><span class="icon"></span>Orkut</a></li>
+	<li><a href="http://myspace.com/Modules/PostTo/Pages" rev="u={URL}&amp;title={TITLE}" class="share_myspace"><span class="icon"></span>Myspace</a></li>
+	<li><a href="http://yammer.com/messages/new" rev="status={URL}" class="share_yammer"><span class="icon"></span>Yammer</a></li>
+	<li><a href="http://tumblr.com/share" rev="u={URL}&amp;t={TITLE}&amp;v=3" class="share_tumblr"><span class="icon"></span>Tumblr</a></li>
+	<li><a href="http://bebo.com/c/share" rev="Url={URL}&amp;title={TITLE}" class="share_bebo"><span class="icon"></span>Bebo</a></li>
+	<li><a href="mailto:" rev="body={URL}%0A%0A{TXT}&amp;subject={TITLE}" class="share_email"><span class="icon"></span>Mail</a></li>
+	<li><a href="http://profile.live.com/P.mvc/badge" rev="title={TITLE}&amp;url={URL}&amp;description={TXT}" class="share_live"><span class="icon"></span>Windows Live</a></li>
+	<li><a href="https://www.google.com/bookmarks/mark" rev="op=edit&amp;bkmk={URL}&amp;title={TITLE}&amp;annotation={TXT}&amp;labels={TAG}" class="share_google"><span class="icon"></span>Google</a></li>
+</ul>

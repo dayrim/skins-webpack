@@ -1,0 +1,208 @@
+#home-poi {
+	position: relative;
+	padding-top: 50px;
+	z-index: 10;
+
+	h2 {
+		font: 200 36px/1.2 $secondary-font;
+		margin-bottom: 30px;
+		color: #54baba;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+.poi {
+	overflow: hidden;
+}
+
+.poi-controls-wrapper {
+	text-align: center;
+}
+
+.poi-zoom {
+	color: #54baba;
+	font-size: 14px;
+	line-height: 22px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 20px 0;
+
+	@include respond-to(large) {
+		margin: 30px 40px;
+	}
+
+	.poi-zoom-button {
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		background: #fff;
+		height: 22px;
+		width: 22px;
+		border-radius: 50%;
+		overflow: hidden;
+		text-indent: -100em;
+		text-align: left;
+
+		&:after {
+			content: '';
+			background: #54baba;
+			display: block;
+			width: 8px;
+			height: 1px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.poi-zoom-button.zoom-in {
+		&:before {
+			content: '';
+			background: #54baba;
+			display: block;
+			width: 1px;
+			height: 8px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.poi-map {
+	height: 800px;
+}
+
+.poi-overlay {
+	text-align: center;
+
+	@include respond-to(large) {
+		display: flex;
+	}
+
+	.category-selector {
+		margin: 0;
+
+		@include respond-to(large) {
+			margin-top: 20px;
+			flex: 1 1 10px;
+		}
+
+		.button {
+			padding-left: 45px;
+
+			$icon-step: 60;
+			$icon-width: 40px;
+			$icon-height: 40px;
+
+			&:before {
+				background: url(../images/poi/icons.svg) no-repeat (-$icon-width) (-$icon-height);
+				content: '';
+				position: absolute;
+				display: block;
+				height: $icon-width;
+				width: $icon-height;
+				top: 0;
+				left: 0;
+			}
+
+			&.icon-restaurants-bars:before {
+				background-position: (0 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-shopping:before {
+				background-position: (1 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-zoo:before {
+				background-position: (2 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-theme-parks:before {
+				background-position: (3 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-wineries:before {
+				background-position: (4 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-breakfast:before {
+				background-position: (5 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-attractions:before {
+				background-position: (6 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-places-for-children:before {
+				background-position: (7 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-museums:before {
+				background-position: (8 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-national-monuments:before {
+				background-position: (9 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-farmer-markets:before {
+				background-position: (10 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-nightlife:before {
+				background-position: (11 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-arts-culture:before {
+				background-position: (12 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-hospitals:before {
+				background-position: (13 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-banks:before {
+				background-position: (14 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-spas:before {
+				background-position: (15 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-gardens:before {
+				background-position: (16 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-cafes:before {
+				background-position: (17 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-entertainment:before {
+				background-position: (18 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-golf:before {
+				background-position: (19 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-romantic-spots:before {
+				background-position: (20 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-hidden-gems:before {
+				background-position: (21 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-corporate-offices:before {
+				background-position: (22 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-outdoors:before {
+				background-position: (23 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-lakes:before {
+				background-position: (24 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-rivers:before {
+				background-position: (25 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-beaches:before {
+				background-position: (26 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-hiking:before {
+				background-position: (27 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-places-of-worship:before {
+				background-position: (28 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-sports:before {
+				background-position: (29 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+			&.icon-universities:before {
+				background-position: (30 * -$icon-step - ($icon-step - $icon-width) / 2) (-($icon-step - $icon-height) / 2);
+			}
+
+		}
+	}
+}

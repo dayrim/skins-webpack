@@ -1,0 +1,49 @@
+/* VALIDATION */
+.inputContainer {
+	position: relative;
+	float: left;
+}
+
+.formError {
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	display: block;
+	line-height: 18px;
+	cursor: pointer;
+	z-index: 5000;
+}
+
+.ajaxSubmit {
+	padding: 20px;
+	background: #55ea55;
+	border: 1px solid #999;
+	display: none
+}
+
+.formError .formErrorContent {
+	background: #b31919;
+	position: relative;
+	z-index: 5001;
+	color: #fff;
+	width: 150px;
+	font-size: 11px;
+	padding: 4px 10px 4px 10px;
+	border-radius: 5px;
+	border-bottom-left-radius: 0;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+
+.greenPopup .formErrorContent {
+	background: #33be40;
+}
+
+.blackPopup .formErrorContent {
+	background: #393939;
+	color: #FFF;
+}
+
+body[dir='rtl'] .formError .formErrorArrow,
+body.rtl .formError .formErrorArrow {
+	margin: -2px 13px 0 0;
+}

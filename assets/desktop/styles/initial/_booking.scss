@@ -1,0 +1,75 @@
+#booking {
+	position: relative;
+	width: 100%;
+	padding: 10px 0 20px;
+	background: #327d7d;
+	z-index: 50;
+
+	form {
+		text-align: center;
+		font-size: 0;
+	}
+
+	.column {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 30px;
+	}
+
+	label {
+		display: block;
+		font-size: 12px;
+		line-height: 32px;
+		color: #cef0f0;
+	}
+
+	input[type='text'], input[type='date'], select, .input-overlay {
+		display: block;
+		height: 36px;
+		padding: 0 10px;
+		border: none;
+		background: #ddf0f0;
+		font-size: 14px;
+		line-height: 36px;
+		color: #132929;
+	}
+	.input-overlay {
+		opacity: 0;
+		margin-top: -36px;
+	}
+
+	#booking-dates {
+		width: 176px;
+	}
+
+	.select-wrapper {
+		width: 100%;
+	}
+
+	select {
+		width: 58px;
+	}
+
+	input[type='submit'] {
+		margin-top:32px;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+.booking-trigger {
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;
+	z-index: 20;
+	height: 60px;
+	font-size: 20px;
+	line-height: 60px;
+
+	@include respond-to(mobile) {
+		display: block;
+	}
+}

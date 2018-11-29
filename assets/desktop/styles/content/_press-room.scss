@@ -1,0 +1,77 @@
+// CATEGORIES
+
+.pressroom {
+	text-align:center;
+
+	.pressroom-item {
+		display:inline-block;
+		vertical-align:top;
+		width:calc(33% - 20px);
+		height:400px;
+		margin:15px 10px 20px 10px;
+		position:relative;
+		overflow:hidden;
+		border:1px solid #54baba;
+		padding:20px 0;
+		background-color:#ddf0f0;
+		background-size: cover;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+
+		@include respond-to(tablet) { width:calc(40% - 20px); }
+		@include respond-to(mobile) {
+			width:100%;
+			margin:10px 0;
+		}
+
+		h4 {
+			font-size: 20px;
+			line-height:30px;
+			text-transform:uppercase;
+			margin-bottom:0;
+		}
+
+		time {
+			color: #54baba;
+			display:block;
+			margin:5px 0;
+		}
+
+		.description {
+			position:absolute;
+			bottom: 0;
+			left:0;
+			right: 0;
+			background:rgba(0,0,0,0.5);
+			padding:10px 20px 20px 20px;
+
+			.centered {
+				time {
+					margin:10px 0;
+					display:block;
+					font-weight:bold;
+				}
+			}
+
+			p {
+				color: #fff;
+				line-height: 18px;
+				font-size: 14px;
+				margin-bottom:0;
+			}
+		}
+
+		.pdf {
+			color: #54baba;
+			margin:10px 0 0 0;
+			display: block;
+			position: relative;
+			line-height: 16px;
+			padding-left:0 !important;
+
+			&:hover { color: #fff;}
+		}
+
+		.view-gallery { margin-top:20px; }
+	}
+}

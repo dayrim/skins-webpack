@@ -1,0 +1,163 @@
+@include respond-to(mobile) {
+	html.mobile-navigation-visible {
+		overflow: hidden;
+	}
+}
+
+#mobile-navigation {
+	display: none;
+	position: fixed;
+	right: -100%;
+	top: 0;
+	padding-top: 130px;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	background: #fff;
+	transition: right 200ms;
+	text-align: center;
+	z-index: 60;
+
+	@include respond-to(mobile-devices) {
+		display: block;
+	}
+
+	@include respond-to(mobile) {
+		padding-top: 100px;
+	}
+
+	.mobile-navigation-visible & {
+		right: 0;
+	}
+
+	.top-menu {
+		z-index: 4;
+		position: relative;
+		top: auto;
+		right: auto;
+		width: 90%;
+		margin: 0 auto;
+
+		@include respond-to(tablet) {
+			max-width: 60%;
+		}
+
+		a {
+			display: block;
+			padding: 4px 40px;
+			font: 20px/24px $secondary-font;
+			text-decoration: none;
+			color: #327d7d;
+
+			&:hover, &.active {
+				color: #54baba;
+			}
+		}
+	}
+
+	.main-menu {
+		position: relative;
+		max-width: 60%;
+		margin: 0 auto;
+		padding-bottom: 25px;
+
+		@include respond-to(mobile) {
+			max-width: 90%;
+		}
+
+		.menu li {
+			position: relative;
+		}
+		.menu a {
+			display: block;
+			padding: 4px 40px;
+		}
+
+		.menu.level-1 {
+			padding-top: 25px;
+
+			> li {
+				> a {
+					font: 26px/32px $secondary-font;
+					text-decoration: none;
+					color: #327d7d;
+
+					&:hover, &.active {
+						color: #54baba;
+					}
+				}
+
+				> .plus {
+					top: 4px;
+				}
+			}
+		}
+
+		.menu.submenu {
+			position: relative;
+			overflow: hidden;
+			max-height: 0;
+			padding: 0;
+			transition: max-height 222ms cubic-bezier(0,1,0,1), padding 333ms;
+
+			a {
+				font-size: 16px;
+				line-height: 24px;
+				text-decoration: none;
+				color: #1f4d4d;
+
+				&:hover, &.active {
+					color: #54baba;
+				}
+			}
+		}
+		.parent.expanded > .submenu {
+			max-height: 800px;
+			padding: 10px 0;
+			transition: max-height 222ms cubic-bezier(1,0,1,0), padding 333ms;
+		}
+
+		// PLUS icon
+
+		.plus {
+			display: block;
+			height: 32px;
+			width: 32px;
+			position: absolute;
+			right: 10px;
+			cursor: pointer;
+
+			.horizontal, .vertical {
+				position: absolute;
+				transition: all 333ms ease-in-out;
+				transform: rotate(-90deg);
+				background-color: #327d7d;
+			}
+			.horizontal {
+				width: 8px;
+				height: 2px;
+				margin-left: 12px;
+				margin-top: 15px;
+			}
+			.vertical {
+				width: 2px;
+				height: 8px;
+				margin-left: 15px;
+				margin-top: 12px;
+			}
+		}
+		.parent.expanded > .plus {
+			> .vertical, > .horizontal {
+				transform: rotate(90deg);
+				background: #54baba !important;
+			}
+			> .horizontal {
+				opacity: 0;
+			}
+		}
+		.menu.submenu .plus {
+			top: 0;
+		}
+	}
+}

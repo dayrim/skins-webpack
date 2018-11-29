@@ -1,0 +1,1 @@
+<iframe src="https://platform.twitter.com/widgets/tweet_button.html?lang=en&amp;count=horizontal&amp;url={$url}&amp;height=20&amp;text={$hebs->meta->title}" class="social-button tweet" title="Tweet" allowtransparency="true" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="20"></iframe>

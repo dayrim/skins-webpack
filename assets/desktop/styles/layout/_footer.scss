@@ -1,0 +1,180 @@
+#footer {
+	position: relative;
+	padding-bottom: 30px;
+	font-size: 12px;
+	color: #97b8b8;
+	text-align:center;
+	z-index: 1;
+
+	a {
+		color: #97b8b8;
+		&:hover {
+			color: #54baba;
+		}
+	}
+
+	.copyright {
+		display:block;
+		margin-bottom:10px;
+	}
+
+	.credits {
+		display:block;
+
+		sup {
+			vertical-align:super;
+		}
+	}
+}
+
+#footer-menu {
+	margin-bottom: 30px;
+	font-size: 0;
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		margin: 0 15px;
+		font: 15px/26px $secondary-font;
+		text-decoration: none;
+		color: #327d7d;
+
+		&:hover, &.active {
+			color: #54baba;
+		}
+	}
+}
+
+#footer-contacts {
+	margin-bottom: 30px;
+
+	h2 {
+		margin-bottom: 10px;
+		font-family: $secondary-font;
+		font-size: 18px;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+}
+
+#newsletter {
+	position: relative;
+	margin-bottom: 30px;
+	font-size: 0;
+
+	h2 {
+		margin-bottom: 15px;
+		font-family: $secondary-font;
+		font-size: 18px;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	input[type="text"] {
+		display: inline-block;
+		vertical-align: top;
+		width: 200px;
+		height: 36px;
+		padding: 0 10px;
+		background: #ddf0f0;
+		font-size: 14px;
+		line-height: 36px;
+		color: #132929;
+
+		&::-webkit-input-placeholder {
+			color: #327d7d;
+			font-style: italic;
+		}
+		&:-moz-placeholder {
+			color: #327d7d;
+			font-style: italic;
+		}
+		&::-moz-placeholder {
+			color: #327d7d;
+			font-style: italic;
+		}
+		&:-ms-input-placeholder {
+			color: #327d7d;
+			font-style: italic;
+		}
+		&:focus::-webkit-input-placeholder {
+			color: #54baba;
+		}
+		&:focus:-moz-placeholder {
+			color: #54baba;
+		}
+		&:focus::-moz-placeholder {
+			color: #54baba;
+		}
+		&:focus:-ms-input-placeholder {
+			color: #54baba;
+		}
+	}
+
+	.button {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+#footer .socials {
+	margin-bottom: 30px;
+	font-size: 0;
+
+	@include respond-to(mobile) { float:none; }
+
+	li {
+		display: inline-block;
+		margin: 0 5px;
+	}
+
+	a {
+		position: relative;
+		display: block;
+		width: 26px;
+		height: 26px;
+		text-indent: -9999px;
+		overflow: hidden;
+		background: url($main-sprite) 0 0 no-repeat;
+
+		@include respond-to(mobile) {
+			display:inline-block;
+		}
+
+		&.facebook {
+			background-position: -1px -347px;
+			&:hover { background-position: -1px -387px; }
+		}
+		&.twitter {
+			background-position: -41px -348px;
+			&:hover { background-position: -41px -388px; }
+		}
+		&.instagram {
+			background-position: -281px -347px;
+			&:hover { background-position: -281px -387px; }
+		}
+		&.tripadvisor {
+			background-position: -201px -347px;
+			&:hover { background-position: -201px -387px; }
+		}
+		&.google, &.googleplus, &.gplus {
+			background-position: -81px -347px;
+			&:hover { background-position: -81px -387px; }
+		}
+		&.youtube {
+			background-position: -121px -347px;
+			&:hover { background-position: -121px -387px; }
+		}
+		&.flickr {
+			background-position: -361px -347px;
+			&:hover { background-position: -361px -387px; }
+		}
+		&.pinterest {
+			background-position: -241px -347px;
+			&:hover { background-position: -241px -387px; }
+		}
+	}
+}

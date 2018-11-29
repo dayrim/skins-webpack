@@ -1,0 +1,27 @@
+@media print {
+
+	html {
+		-webkit-print-color-adjust: exact;
+	}
+
+	.fade-on-scroll {
+		opacity: 1 !important;
+		transform: translate(0, 0) !important;
+	}
+
+	body > *:not(#content) {
+		display: none;
+	}
+
+	#content-submenu {
+		display: none;
+	}
+
+	#calendar-header, #calendar-year, #calendar-month {
+		display: none;
+	}
+
+	@page {
+		size: 960px 1358px;
+	}
+}

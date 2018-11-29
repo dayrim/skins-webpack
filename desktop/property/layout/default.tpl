@@ -1,0 +1,1 @@
+{extends file="../../corporate/layout/default.tpl"}

@@ -1,0 +1,80 @@
+// selectmenu
+
+.ui-selectmenu-button {
+	position: relative;
+	display: block;
+	width:auto !important;
+	height:40px;
+	line-height:40px;
+	border: thin solid #d1d1d1;
+	font-size:14px;
+	text-align:left;
+	color:#53565a;
+	background: #fff;
+	transition: all .2s;
+
+	&::placeholder {
+		color: #292C2D;
+	}
+
+	.ui-icon {
+		position:absolute;
+		top:50%;
+		right:10px;
+		width:0;
+		height: 0;
+		margin-top:-4px;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-top: 7px solid #292C2D;
+	}
+
+	&:hover {
+		.ui-icon {
+			border-top-color: #54baba;
+		}
+	}
+
+	.ui-selectmenu-text {
+		display:block;
+		height:100%;
+		padding: 0 30px 0 10px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		strong { font-weight:700; }
+	}
+}
+
+.ui-selectmenu-menu {
+	position: absolute;
+	z-index: 9999999;
+	display: none;
+	max-height: 258px;
+	overflow: auto;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+
+	&.ui-selectmenu-open {
+		display: block;
+	}
+
+	li {
+
+		.ui-menu-item-wrapper {
+			padding: 10px 20px;
+			font-size: 14px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			display: block;
+			overflow: hidden;
+			color:#000;
+		}
+
+		.ui-state-active {
+			background: #eee;
+			cursor: pointer;
+		}
+	}
+}

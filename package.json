@@ -1,0 +1,35 @@
+{
+  "name": "smart-cms-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "prod-build": "webpack --mode production --watch --progress  ",
+    "dev-build": "webpack --mode development --watch  --progress "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayrim/smart-cms-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "autoprefixer": "^9.3.1",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-concat-plugin": "^3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/dayrim/smart-cms-webpack/issues"
+  },
+  "homepage": "https://github.com/dayrim/smart-cms-webpack#readme",
+  "dependencies": {}
+}

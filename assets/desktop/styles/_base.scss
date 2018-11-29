@@ -1,0 +1,66 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html {
+	position: relative;
+	overflow-y: scroll;
+	height: 100%;
+	background: #fafcfc;
+	color: #132929;
+}
+
+body {
+	position: relative;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html,
+body,
+input,
+textarea,
+button {
+	font-family: $primary-font;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+a {
+	color: #327d7d;
+	&:hover {
+		color: #54baba;
+	}
+}
+
+@include respond-to(desktop) {
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #327d7d;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #54baba;
+	}
+
+	::-moz-selection {
+		background: rgba(50, 125, 125, 0.8);
+		color: #fff;
+	}
+
+	::selection {
+		background: rgba(50, 125, 125, 0.8);
+		color: #fff;
+	}
+}

@@ -1,0 +1,268 @@
+@include respond-to(mobile) {
+	html.booking-visible {
+		overflow: hidden;
+	}
+}
+
+#booking {
+	@include respond-to(mobile) {
+		position: fixed;
+		top: 0;
+		left: -101%;
+		display: block;
+		height: 100%;
+		overflow: auto;
+		padding: 0;
+		transition: left $transition;
+		-webkit-overflow-scrolling: touch;
+
+		.booking-visible & {
+			left: 0;
+		}
+
+		.center-column {
+			padding: 0;
+			max-width: 100%;
+			height: 100%;
+		}
+
+		form {
+			width: 100%;
+			padding: 100px 20px 30px 20px;
+		}
+
+		.column {
+			margin-right: 0;
+			width: 100%;
+
+			&.adults, &.children {
+				width: 48%;
+			}
+			&.children { margin-left:4%; }
+		}
+
+		input[type='text'], input[type='date'], select, .input-overlay {
+			width: 100%;
+			padding: 0 35px;
+			text-align: center;
+			text-align-last: center;
+		}
+		.input-overlay {
+			display: block;
+		}
+
+		#booking-dates {
+			width: 100%;
+		}
+
+		input[type='submit'] {
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+
+	.close {
+		display: none;
+		position:relative;
+		height: 30px;
+		width: 30px;
+		margin: 0 auto 30px;
+		overflow: hidden;
+		text-indent: -9999px;
+		opacity: 1;
+		cursor: pointer;
+		transition: opacity 0.3s ease-out;
+
+		@include respond-to (mobile) {
+			display: block;
+		}
+
+		span {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+
+			&:before, &:after {
+				content: "";
+				display: block;
+				width: 35px;
+				height: 3px;
+				position: absolute;
+				left: -3px;
+				background: #54baba;
+				transition: $transition;
+			}
+
+			&:before {
+				top: -1px;
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				bottom: 0;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+
+// Booking datepicker
+
+#booking-datepicker {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 62px;
+	z-index: 7;
+
+	@include respond-to(tablet-and-desktop) {
+		.booking-datepicker-under & {
+			bottom: auto;
+			top: 75px;
+		}
+	}
+
+	&.visible {
+		display: block;
+	}
+
+	@include respond-to (mobile) {
+		display: block;
+		position:relative;
+		bottom:auto;
+		max-height:0;
+		overflow:hidden;
+		transition: max-height $transition;
+
+		&.visible {
+			max-height:500px;
+		}
+	}
+
+	.arrival-departure-status {
+		overflow: hidden;
+		white-space: nowrap;
+		background: #327d7d;
+		text-align: center;
+
+		@include respond-to (mobile) {
+			display:none;
+		}
+
+		div {
+			display: inline-block;
+			width: 100%;
+			transition: all 200ms;
+		}
+
+		.arrival, .departure {
+			opacity: 0;
+			font: 20px/55px $primary-font;
+			text-transform: uppercase;
+			color: #fff;
+
+			&:after {
+				content: attr(data-text);
+			}
+		}
+		.arrival {
+			margin-left: -100%;
+		}
+		.departure {
+			margin-right: -100%;
+		}
+	}
+	&.checkin-step .arrival-departure-status .arrival {
+		margin-left: 0;
+		opacity: 1;
+	}
+	&.checkout-step .arrival-departure-status .departure {
+		margin-right: 0;
+		opacity: 1;
+	}
+
+	.ui-datepicker {
+		width: 100% !important;
+		white-space: nowrap;
+	}
+
+	.ui-datepicker-group {
+		display: inline-block;
+		white-space: normal;
+
+		&:nth-child(2) {
+			margin-left: 20px;
+		}
+
+		@include respond-to (mobile) {
+			width: 100%;
+
+			&:nth-child(2) {
+				display:none;
+			}
+		}
+	}
+
+	.ui-datepicker-header {
+		margin-bottom: 15px;
+
+		.ui-datepicker-prev, .ui-datepicker-next { display:none; }
+	}
+
+	.ui-datepicker-prev, .ui-datepicker-next {
+		top:65px;
+
+		@include respond-to(mobile) {
+			top: 10px;
+		}
+	}
+	.ui-datepicker-prev {
+		left:20px;
+
+		@include respond-to(mobile) {
+			left: 26px;
+		}
+	}
+	.ui-datepicker-next {
+		right:20px;
+
+		@include respond-to(mobile) {
+			right: 26px;
+		}
+	}
+
+	.ui-datepicker-calendar {
+		@include respond-to (mobile) {
+			width:100%;
+		}
+	}
+
+	&.checkin-step td a, &.checkout-step td a, td.checkin-date a, td.checkout-date a {
+		position: relative;
+
+		&:before {
+			position: absolute;
+			left: 0;
+			bottom: 100%;
+			width: 100%;
+			height: 14px;
+			margin-bottom: -7px;
+			background-color: #327d7d;
+			font-size: 7px;
+			line-height: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #fff;
+		}
+	}
+	&.checkin-step td a:hover:before, td.checkin-date a:before {
+		content: 'in';
+	}
+	&.checkout-step td:not(.checkin-date) a:hover:before, td.checkout-date a:before {
+		content: 'out';
+	}
+}

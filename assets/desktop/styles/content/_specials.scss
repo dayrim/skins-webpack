@@ -1,0 +1,102 @@
+.specials {
+	@include clear-after;
+
+	.image-list-item {
+		position: relative;
+		overflow: hidden;
+		height: 300px;
+		width: 100%;
+		margin: 0 auto 20px;
+		text-align: left;
+		font-size:14px;
+		line-height:18px;
+
+		@include respond-to(mobile) { height:auto; }
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			border: 1px solid #e2e2e2;
+			z-index:-1;
+		}
+
+		.background {
+			position: relative;
+			width: 350px;
+			height: 300px;
+			margin-left: 40px;
+			display: block;
+			float: right;
+			overflow: hidden;
+			background-position: 50% 50%;
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			@include respond-to(tablet) { width:300px; }
+			@include respond-to(mobile) {
+				width:100%;
+				margin:0 0 10px 0;
+			}
+		}
+
+		.description {
+			width: 100%;
+			display: block;
+			padding: 25px;
+
+			@include respond-to(mobile) {
+				padding: 20px 20px 10px 20px;
+				text-align: center;
+			}
+
+			h3 {
+				margin-bottom: 15px;
+
+				a {
+					text-decoration:none;
+					&:hover { color:#54baba; }
+				}
+			}
+
+			nav {
+				position: absolute;
+				bottom: 30px;
+				left: 25px;
+
+				@include respond-to(tablet) { bottom:25px; }
+				@include respond-to(mobile) {
+					text-align:center;
+					width:100%;
+					left:auto;
+					right:auto;
+					bottom:auto;
+					position:relative;
+				}
+			}
+		}
+	}
+}
+
+.single-special {
+	.background {
+		float:right;
+		width:300px;
+		height:300px;
+		margin-left:20px;
+		margin-bottom:20px;
+		background-position: 50% 50%;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@include respond-to(large) { width:500px; }
+		@include respond-to(mobile) {
+			width:100%;
+			float:none;
+			margin-left:0;
+		}
+	}
+}

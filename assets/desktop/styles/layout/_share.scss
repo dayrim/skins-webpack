@@ -1,0 +1,170 @@
+#share-this-site-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAQMAAACQp+OdAAAAA1BMVEUAAACnej3aAAAAAXRSTlOzEo46UAAAAA5JREFUeAFjoACMglEAAAJAAAGccJWlAAAAAElFTkSuQmCC');
+	background: rgba(0, 0, 0, 0.7);
+
+	.wrapper {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 420px;
+		height: 140px;
+		padding: 20px;
+		margin: -90px 0 0 -230px;
+		background: #327d7d;
+	}
+
+	.close-button {
+		position: absolute;
+		right: 15px;
+		top: 10px;
+		width: 17px;
+		height: 17px;
+		text-indent: -9999px;
+		overflow: hidden;
+		background: url($common-sprite) 0 0 no-repeat;
+		cursor: pointer;
+		z-index: 2;
+
+		&:hover {
+			background-position: -37px 0;
+		}
+		&:active {
+			background-position: -74px 0;
+		}
+	}
+}
+
+#share-this-site {
+	padding: 0;
+	margin: 0 5px 5px;
+	width: 420px;
+
+	li {
+		float: left;
+		width: 130px;
+		margin: 0 5px;
+		font-size: 0;
+	}
+
+	a {
+		position: relative;
+		display: block;
+		height: 16px;
+		margin: 5px 0;
+		padding-left: 20px;
+		font: 12px/16px $secondary-font;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #f7fcfc;
+
+		&:hover {
+			color: #6dc7c7;
+		}
+
+		.icon {
+			float: left;
+			margin-right: 5px;
+			width: 16px;
+			height: 16px;
+			background: url(../images/share.png) 0 0 no-repeat;
+		}
+
+		&.share_facebook .icon {
+			background-position: 0 0
+		}
+		&.share_facebook:hover .icon {
+			background-position: -36px 0
+		}
+		&.share_twitter .icon {
+			background-position: 0 -36px
+		}
+		&.share_twitter:hover .icon {
+			background-position: -36px -36px
+		}
+		&.share_tumblr .icon {
+			background-position: 0 -72px
+		}
+		&.share_tumblr:hover .icon {
+			background-position: -36px -72px
+		}
+		&.share_linkedin .icon {
+			background-position: 0 -108px
+		}
+		&.share_linkedin:hover .icon {
+			background-position: -36px -108px
+		}
+		&.share_digg .icon {
+			background-position: 0 -144px
+		}
+		&.share_digg:hover .icon {
+			background-position: -36px -144px
+		}
+		&.share_delicious .icon {
+			background-position: 0 -180px
+		}
+		&.share_delicious:hover .icon {
+			background-position: -36px -180px
+		}
+		&.share_stumbleupon .icon {
+			background-position: 0 -216px
+		}
+		&.share_stumbleupon:hover .icon {
+			background-position: -36px -216px
+		}
+		&.share_orkut .icon {
+			background-position: 0 -252px
+		}
+		&.share_orkut:hover .icon {
+			background-position: -36px -252px
+		}
+		&.share_myspace .icon {
+			background-position: 0 -288px
+		}
+		&.share_myspace:hover .icon {
+			background-position: -36px -288px
+		}
+		&.share_yammer .icon {
+			background-position: 0 -324px
+		}
+		&.share_yammer:hover .icon {
+			background-position: -36px -324px
+		}
+		&.share_pinterest .icon {
+			background-position: 0 -360px
+		}
+		&.share_pinterest:hover .icon {
+			background-position: -36px -360px
+		}
+		&.share_bebo .icon {
+			background-position: 0 -396px
+		}
+		&.share_bebo:hover .icon {
+			background-position: -36px -396px
+		}
+		&.share_live .icon {
+			background-position: 0 -432px
+		}
+		&.share_live:hover .icon {
+			background-position: -36px -432px
+		}
+		&.share_google .icon {
+			background-position: 0 -468px
+		}
+		&.share_google:hover .icon {
+			background-position: -36px -468px
+		}
+		&.share_email .icon {
+			background-position: 0 -504px
+		}
+		&.share_email:hover .icon {
+			background-position: -36px -504px
+		}
+	}
+}

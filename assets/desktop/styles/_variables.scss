@@ -1,0 +1,51 @@
+// Fonts
+
+$fonts-path: '../fonts/';
+$primary-font: Arial, sans-serif;
+$secondary-font: 'TitilliumWeb WF', sans-serif;
+
+// Images
+
+$main-sprite: '../images/sprite.svg';
+$common-sprite: '../images/common.svg';
+
+// Dimensions
+
+$center-column-width: 980px;
+
+$break-mobile-small: 450px;
+$break-mobile: 768px;
+$break-tablet: 980px;
+$break-desktop: $break-tablet;
+$break-desktop-large: 1440px;
+$break-desktop-extra-large: 1800px;
+$break-desktop-height: 600px;
+$break-desktop-l-height: 768px;
+
+@mixin respond-to($media) {
+
+	@if $media == mobile-small {
+		@media only screen and (max-width: $break-mobile-small - 1) { @content; }
+	} @else if $media == mobile {
+		@media only screen and (max-width: $break-mobile - 1) { @content; }
+	} @else if $media == tablet {
+		@media only screen and (min-width: $break-mobile) and (max-width: $break-tablet - 1) { @content; }
+	} @else if $media == mobile-devices {
+		@media only screen and (max-width: $break-tablet - 1) { @content; }
+	} @else if $media == mobile-device-landscape {
+		@media only screen and (max-width: $break-tablet - 1) and (orientation: landscape) { @content; }
+	} @else if $media == tablet-and-desktop {
+		@media only screen and (min-width: $break-mobile) { @content; }
+	} @else if $media == desktop {
+		@media only screen and (min-width: $break-desktop) { @content; }
+	} @else if $media == desktop-large {
+		@media only screen and (min-width: $break-desktop-large) { @content; }
+	} @else if $media == desktop-extra-large {
+		@media only screen and (min-width: $break-desktop-extra-large) { @content; }
+	}
+
+}
+
+// Other
+
+$transition: 350ms ease-in-out;
