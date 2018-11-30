@@ -1,15 +1,16 @@
 {
-  "name": "smart-cms-webpack",
+  "name": "skins-webpack",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "prod-build": "webpack --mode production --watch --progress  ",
     "dev-build": "webpack --mode development --watch  --progress "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dayrim/smart-cms-webpack.git"
+    "url": "git+https://github.com/dayrim/skins-webpack.git"
   },
   "author": "",
   "license": "ISC",
@@ -25,11 +26,11 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
-    "webpack-concat-plugin": "^3.0.0"
+    "webpack-concat-plugin": "^3.0.0",
+    "webpack-merge-and-include-globally": "^2.1.7"
   },
   "bugs": {
-    "url": "https://github.com/dayrim/smart-cms-webpack/issues"
+    "url": "https://github.com/dayrim/skins-webpack/issues"
   },
-  "homepage": "https://github.com/dayrim/smart-cms-webpack#readme",
-  "dependencies": {}
+  "homepage": "https://github.com/dayrim/skins-webpack#readme"
 }

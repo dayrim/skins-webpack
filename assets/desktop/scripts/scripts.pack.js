@@ -1,1 +1,111 @@
-!function(a){var n={};function i(e){if(n[e])return n[e].exports;var t=n[e]={i:e,l:!1,exports:{}};return a[e].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=a,i.c=n,i.d=function(e,t,a){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:a})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(t,e){if(1&e&&(t=i(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var a=Object.create(null);if(i.r(a),Object.defineProperty(a,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var n in t)i.d(a,n,function(e){return t[e]}.bind(null,n));return a},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i(i.s=0)}([function(e,t,a){e.exports=a(1)},function(e,t,a){"use strict";var n=$(window),i=(n.width(),n.height()),o=n.scrollTop(),r=$(document),l=$("html"),d=$("body"),s=$("#header"),c=s.height(),u=$(".main-menu",s),f=($("#booking"),$("#photos")),p=($("#promos"),$("#mobile-navigation")),m=$("li.parent",p),h=$("#mobile-navigation-trigger"),g=($("#events"),$.Deferred(),$(".reviews-slideshow"),$(".fade-on-scroll")),b=!y,v="",y=!!navigator.userAgent&&navigator.userAgent.match(/(iphone|ipad|ipod|android|webos|blackberry|windows phone)/gi),x=function(){y&&("mobile"==v||"tablet"==v?d.css("height",i):d.removeAttr("style"))};y&&l.addClass("mobile-device"),n.on("scroll.globalScrollHandler load.globalScrollHandler init.globalScrollHandler",function(){o=n.scrollTop(),requestAnimationFrame(function(){l.toggleClass("booking-datepicker-under",i-c-380<o),1==b&&"function"==typeof w&&w()})}).trigger("init.globalScrollHandler"),n.on("resize.globalResizeHandler init.globalResizeHandler",function(){var e;n.width(),i=n.height(),c=s.height(),matchMedia("only screen and (max-width: 767px)").matches&&(e="mobile"),matchMedia("only screen and (min-width: 768px) and (max-width: 999px)").matches&&(e="tablet"),matchMedia("only screen and (min-width: 1000px)").matches&&(e="desktop"),e!=v&&(v=e,requestAnimationFrame(function(){l.removeClass("mobile tablet desktop").addClass(v),x()}))}).trigger("init.globalResizeHandler"),n.on("orientationchange.globalOrientationHandler",function(){x(),setTimeout(function(){x()},500)});var w=function(){g.each(function(){var e=$(this);if(e.offset().top+i/10<o+i){if(!e.data("visible")&&!e.data("delayedFadeActive")){var t=parseInt(e.data("delay"));t?(e.data("delayedFadeActive",!0),e.data("delayedFadeTimer",setTimeout(function(){e.addClass("visible").data("visible",!0).data("delayedFadeActive",!1)},t))):e.addClass("visible").data("visible",!0)}}else clearTimeout(e.data("delayedFadeTimer")),e.removeClass("visible").data("visible",!1).data("delayedFadeActive",!1)})};0==b&&g.each(function(){$(this).removeClass("fade-on-scroll").removeData("delay")}),n.on("load",function(){$("body img").each(function(e,t){var a=$(this);a.attr("alt")||function e(t,a){var n=t.parent(),i=(a=a||t,parseInt(1e3*Math.random()));if(n.attr("id")){var o=n.attr("id").charAt(0).toUpperCase()+n.attr("id").slice(1);return $(a).attr("alt",siteSettings.name+" "+o+" Section Image "+i),!1}"BODY"==a.parent().prop("tagName")?$(a).attr("alt","Tracking Pixel "+i):""==t.text().replace(/\s/g,"").length?e(n,a):$(a).attr("alt",t.text().trim().replace(/\n.*/g,"").split(/\. |\! |\? /)[0])}(a)})});var C=$("#skip-to-content");if(C.length){var k=$("#content").length?$("#content"):f.next(["id"]);C.attr("href","#"+k.attr("id")),k.attr("tabindex","-1"),C.on("click",function(e){$("html, body").stop().animate({scrollTop:$(C.attr("href")).offset().top-c},400),k.focus(),e.preventDefault()})}$("> ul > li",u).on("mouseenter",function(){$(this).siblings().addBack().removeClass("expanded"),r.off("mousedown.headerMainMenu")}).children("a").on("focus",function(){0}),h.on("click",function(){l.toggleClass("mobile-navigation-visible")});var T=function(e){e.removeClass("expanded").find(".expanded").removeClass("expanded")};m.each(function(){var t=$(this);$("> .plus",t).on("click",function(e){t.hasClass("expanded")?T(t):t.addClass("expanded").siblings().each(function(){T($(this))}),e.preventDefault()})}),$(".scroll-to-explore",f).click(function(e){e.preventDefault(),$("html, body").stop().animate({scrollTop:f.height()-c},400)})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./assets/desktop/ds.js":
+/*!******************************!*\
+  !*** ./assets/desktop/ds.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./assets/desktop/ds.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!************************************!*\
+  !*** multi ./assets/desktop/ds.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__(/*! ./assets/desktop/ds.js */\"./assets/desktop/ds.js\");\n\n\n//# sourceURL=webpack:///multi_./assets/desktop/ds.js?");
+
+/***/ })
+
+/******/ });

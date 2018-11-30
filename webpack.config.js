@@ -2,13 +2,13 @@ const path = require("path");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const ConcatPlugin = require("webpack-concat-plugin");
+const MergeIntoSingleFilePlugin = require("webpack-merge-and-include-globally");
 
 module.exports = {
-  entry: ["./assets/desktop/scripts/scripts.js"],
+  entry: ["./assets/desktop/ds.js"],
   output: {
-    path: path.resolve("./assets/desktop"),
-    filename: "scripts/scripts.pack.js",
+    path: path.resolve("./assets"),
+    filename: "desktop/scripts/scripts.mymin.js",
     publicPath: ""
   },
 
@@ -46,17 +46,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "styles/styles.min.css"
     }),
-    new ConcatPlugin({
-      // examples
-      uglify: false,
-      sourceMap: false,
-      name: "result",
-      outputPath: "path/to/output/",
-      fileName: "[name].[hash:8].js",
-      filesToConcat: [["scripts/**/*.js", "!**/scripts.min.js"]],
-      attributes: {
-        async: true
+    new MergeIntoSingleFilePlugin({
+      files: {
+        "vendor.js": ["**/scripts/**/*(!(!(*.js)|scripts.min.js))"]
       }
     })
   ]
 };
+// "scripts/**/*.js", "!**/scripts.min.js"
