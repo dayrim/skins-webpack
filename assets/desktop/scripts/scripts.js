@@ -2,7 +2,26 @@
 
 // @codekit-append "_common.js", "_booking.js", "_photos.js", "_promotiles.js", "_events.js", "_reviews.js", "_google-maps.js", "_maps.js", "_poi.js", "_galleries.js", "_pressroom.js", "_rooms.js", "_feeds.js", "_calendar.js";
 
-'use strict';
+import './libraries/_jquery.js';
+import './libraries/_json.js';
+
+import './_common.js';
+import './_booking.js';
+import './_photos.js';
+import './_promotiles.js';
+import './_events.js';
+import './_reviews.js';
+import './_google-maps.js';
+import './_maps.js';
+import './_poi.js';
+import './_galleries.js';
+import './_pressroom';
+import './_rooms';
+import './_feeds';
+import './_calendar';
+
+import '../styles/styles.scss';
+import '../styles/promotiles.scss';
 
 // Objects cache / Global variables & settings
 

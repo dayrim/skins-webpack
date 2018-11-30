@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "TitilliumWeb WF";
+  src: url(/fonts/TitilliumWeb-ExtraLight.woff2) format("woff2"), url(/fonts/TitilliumWeb-ExtraLight.woff) format("woff");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: "TitilliumWeb WF";
+  src: url(/fonts/TitilliumWeb-Regular.woff2) format("woff2"), url(/fonts/TitilliumWeb-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "TitilliumWeb WF";
+  src: url(/fonts/TitilliumWeb-Italic.woff2) format("woff2"), url(/fonts/TitilliumWeb-Italic.woff) format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: "TitilliumWeb WF";
+  src: url(/fonts/TitilliumWeb-Bold.woff2) format("woff2"), url(/fonts/TitilliumWeb-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "TitilliumWeb WF";
+  src: url(/fonts/TitilliumWeb-BoldItalic.woff2) format("woff2"), url(/fonts/TitilliumWeb-BoldItalic.woff) format("woff");
+  font-weight: 700;
+  font-style: italic; }
+
+.admin .preview-item {
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+  height: auto;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+  .admin .preview-item .promo .thumbnail img {
+    display: block;
+    width: 100%; }
+
+#promos {
+  position: relative;
+  z-index: 30; }
+  #promos .slideshow {
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden; }
+  #promos .slideshow-wrapper {
+    font-size: 0;
+    white-space: nowrap; }
+  #promos .promo {
+    position: relative;
+    display: inline-block;
+    width: 33.33%;
+    vertical-align: top;
+    overflow: hidden;
+    white-space: normal;
+    background: #266060;
+    color: #fff; }
+    #promos .promo .inner-wrapper {
+      width: 100%;
+      padding-top: 100%; }
+    #promos .promo .thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: 50% 50%;
+      background-size: cover;
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+      -webkit-transition: -webkit-transform 600ms;
+      transition: -webkit-transform 600ms;
+      transition: transform 600ms;
+      transition: transform 600ms, -webkit-transform 600ms; }
+      #promos .promo .thumbnail:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.25); }
+      #promos .promo .thumbnail .loading:before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin: -12px 0 0 -12px;
+        border: 3px solid transparent;
+        border-top-color: #54baba;
+        border-bottom-color: #54baba;
+        border-radius: 50%;
+        -webkit-animation: loading-icon-spin 1200ms linear infinite;
+                animation: loading-icon-spin 1200ms linear infinite; }
+
+@-webkit-keyframes loading-icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes loading-icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+      #promos .promo .thumbnail .loading:before {
+        top: 8%;
+        right: 8%;
+        left: auto;
+        margin: auto; }
+    #promos .promo:hover .thumbnail {
+      -webkit-transform: scale(1);
+              transform: scale(1); }
+    #promos .promo .content {
+      position: absolute;
+      bottom: 25px;
+      left: 30px;
+      right: 30px; }
+    #promos .promo h3 {
+      font-family: "TitilliumWeb WF", sans-serif;
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 38px;
+      margin-bottom: 12px;
+      text-transform: uppercase; }
+      #promos .promo h3 a {
+        color: inherit;
+        text-decoration: none; }
+    #promos .promo p {
+      font-size: 13px;
+      line-height: 16px;
+      margin-bottom: 20px; }
+    #promos .promo .price {
+      font: 15px/32px "TitilliumWeb WF", sans-serif;
+      margin-bottom: 20px; }
+      #promos .promo .price strong {
+        font-weight: bold;
+        font-size: 20px; }
+    #promos .promo .promo-button {
+      display: block;
+      font-size: 18px;
+      margin-top: 14px;
+      line-height: 24px;
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase; }
+      #promos .promo .promo-button:hover {
+        text-decoration: underline; }
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+      #promos .promo {
+        width: 50%; } }
+    @media only screen and (max-width: 767px) {
+      #promos .promo {
+        width: 83%; } }
+  #promos .slideshow-pagination {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0; }
+    @media only screen and (max-width: 767px) {
+      #promos .slideshow-pagination {
+        display: none; } }
+    #promos .slideshow-pagination > * {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      text-indent: -9999px;
+      overflow: hidden;
+      background: #327d7d;
+      border-radius: 50%;
+      -webkit-transition: background 350ms ease-in-out;
+      transition: background 350ms ease-in-out;
+      cursor: pointer; }
+      #promos .slideshow-pagination > *:hover, #promos .slideshow-pagination > *.active {
+        background: #54baba; }

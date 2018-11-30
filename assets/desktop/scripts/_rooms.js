@@ -3,7 +3,7 @@
 (function(window, $) {
 
 	'use strict';
-
+//FIND THIS STRING
 	// TEMPLATE 1
 
 	$('.rooms').each(function(){
